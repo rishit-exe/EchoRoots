@@ -1,20 +1,9 @@
-"use client";
+import MapClientWrapper from "../components/MapClientWrapper";
+import { languagesData } from "../utils/sampleData";
 
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-import { Archive, Info, Navigation, Layers } from "lucide-react";
-import MapComponent from "../components/MapComponent";
-import { languagesData, getTotalSpeakers } from "../utils/sampleData";
-
-export default function MapPage() {
-  const searchParams = useSearchParams();
-  const highlightedId = searchParams?.get('highlight');
-
-  const totalLanguages = languagesData.length;
-  const totalSpeakers = getTotalSpeakers();
-  const endangeredCount = languagesData.filter(lang => 
-    lang.status === "Critically Endangered" || lang.status === "Severely Endangered"
-  ).length;
+export default async function MapPage({ searchParams }) {
+  const sp = await searchParams;
+  const highlightedId = sp?.highlight || null;
 
   return (
     <div className="min-h-screen px-4 py-12">
@@ -23,9 +12,10 @@ export default function MapPage() {
         {/* Map Container */}
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 mb-8">
           <div className="h-[600px] w-full">
-            <MapComponent 
+            <MapClientWrapper
               highlightedLanguageId={highlightedId}
               className="w-full h-full"
+              languagesData={languagesData}
             />
           </div>
         </div>

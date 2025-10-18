@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "analyze": "cross-env ANALYZE=1 next build --turbopack"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
@@ -23,6 +24,8 @@
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "@next/bundle-analyzer": "^13.2.0",
+    "cross-env": "^7.0.3"
   }
 }

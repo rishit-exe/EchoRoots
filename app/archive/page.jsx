@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Search, Filter, SortAsc, Map, Grid, List } from "lucide-react";
 import LanguageCard from "../components/LanguageCard";
-import { languagesData } from "../utils/sampleData";
 
 export default function Archive() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,6 +10,23 @@ export default function Archive() {
   const [selectedStatus, setSelectedStatus] = useState("");
   const [sortBy, setSortBy] = useState("name");
   const [viewMode, setViewMode] = useState("grid");
+  const [languagesData, setLanguagesData] = useState([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function load() {
+      try {
+        const res = await fetch('/api/languages');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!cancelled) setLanguagesData(data);
+      } catch (e) {
+        // ignore
+      }
+    }
+    load();
+    return () => { cancelled = true };
+  }, []);
 
   // Get unique regions and statuses for filters
   const regions = [...new Set(languagesData.map(lang => lang.region))];
@@ -46,7 +62,7 @@ export default function Archive() {
     });
 
     return filtered;
-  }, [searchTerm, selectedRegion, selectedStatus, sortBy]);
+  }, [languagesData, searchTerm, selectedRegion, selectedStatus, sortBy]);
 
   return (
     <div className="min-h-screen px-4 py-12">

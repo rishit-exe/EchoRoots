@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { MapPin, Info, ExternalLink, Users, FileText } from "lucide-react";
-import { languagesData } from "../utils/sampleData";
 
-export default function MapComponent({ highlightedLanguageId, className }) {
+export default function MapComponent({ highlightedLanguageId, className, languagesData = [] }) {
   const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [mapInitialized, setMapInitialized] = useState(false);
 
@@ -77,7 +76,7 @@ export default function MapComponent({ highlightedLanguageId, className }) {
 
         {/* Language Markers */}
         <div className="absolute inset-0">
-          {languagesData.map((language, index) => {
+      {languagesData.map((language, index) => {
             // Convert coordinates to relative positions on the map
             const x = ((language.coordinates[1] - 74) / 8) * 100; // Longitude relative positioning
             const y = ((13 - language.coordinates[0]) / 3) * 100; // Latitude relative positioning (inverted)

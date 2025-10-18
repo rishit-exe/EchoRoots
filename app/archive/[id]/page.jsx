@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { 
@@ -16,12 +16,46 @@ import {
   Video,
   ExternalLink
 } from "lucide-react";
-import { getLanguageById } from "../../utils/sampleData";
 
 export default function LanguageDetail() {
   const params = useParams();
-  const language = getLanguageById(params.id);
+  const [language, setLanguage] = useState(null);
   const [activeMediaTab, setActiveMediaTab] = useState("all");
+  const [loading, setLoading] = useState(true);
+  const [activeMedia, setActiveMedia] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function load() {
+      try {
+        const res = await fetch(`/api/languages/${params.id}`);
+        if (!res.ok) {
+          setLanguage(null);
+          setLoading(false);
+          return;
+        }
+        const data = await res.json();
+        if (!cancelled) setLanguage(data);
+      } catch (e) {
+        if (!cancelled) setLanguage(null);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+    load();
+    return () => { cancelled = true };
+  }, [params.id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="text-center">
+          <div className="animate-spin w-10 h-10 border-2 border-white/20 border-t-white rounded-full mx-auto mb-4" />
+          <p className="text-white/80">Loading language...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!language) {
     return (
@@ -225,13 +259,49 @@ export default function LanguageDetail() {
                   <p className="text-white/70 text-sm mb-4">{media.description}</p>
                 )}
 
-                <button className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white font-medium hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2">
+                <button
+                  onClick={() => setActiveMedia(media)}
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white font-medium hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
+                >
                   <Play className="w-4 h-4" />
                   {media.type === "image" ? "View" : "Play"}
                 </button>
               </div>
             ))}
           </div>
+
+          {/* Media Modal - lazy loads media */}
+          {activeMedia && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
+              <div className="absolute inset-0 bg-black/70" onClick={() => setActiveMedia(null)} />
+              <div className="relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20 max-w-3xl w-full z-10">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-lg font-semibold text-white">{activeMedia.title}</h3>
+                  <button onClick={() => setActiveMedia(null)} className="text-white/80">✕</button>
+                </div>
+                <div>
+                  {activeMedia.type === 'audio' && (
+                    <audio controls preload="none" className="w-full">
+                      <source src={activeMedia.file} />
+                      Your browser does not support the audio element.
+                    </audio>
+                  )}
+
+                  {activeMedia.type === 'video' && (
+                    <video controls preload="none" className="w-full rounded-md">
+                      <source src={activeMedia.file} />
+                      Your browser does not support the video tag.
+                    </video>
+                  )}
+
+                  {activeMedia.type === 'image' && (
+                    // use next/image would be better, but keeping simple
+                    <img src={activeMedia.file} alt={activeMedia.title} className="w-full rounded-md" />
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
 
           {filteredMedia.length === 0 && (
             <div className="text-center py-12">
