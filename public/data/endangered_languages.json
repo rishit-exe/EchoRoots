@@ -1,38 +1,218 @@
 [
   {
-    "id": 4,
-    "name": "Irular",
-    "region": "Tamil Nadu & Kerala",
-    "summary": "A Dravidian language spoken by the Irula people; traditional knowledge of snakes and forest medicine."
-  },
-  {
-    "id": 7,
-    "name": "Kattunayakan",
-    "region": "Western Ghats (Nilgiris, Wayanad)",
-    "summary": "A tribal language of forest-dwelling communities; rich oral traditions and songs."
+    "id": 1,
+    "name": "Adiyan",
+    "region": "Wayanad region extending into the Nilgiris district",
+    "summary": "A small tribal group found mainly in the Nilgiris, traditionally agricultural laborers and forest dwellers with close cultural ties to Kerala tribes."
   },
   {
     "id": 2,
-    "name": "Kota",
-    "region": "Nilgiris (excl. Kanyakumari & Shenkottah taluk)",
-    "summary": "A South Dravidian language with musical traditions; distinct phonology and culture."
+    "name": "Aranadan",
+    "region": "Western slopes of the Nilgiris district",
+    "summary": "A Malayalam-speaking tribal community known for forest-based livelihoods and shifting cultivation practices."
   },
   {
     "id": 3,
-    "name": "Kurumbas",
-    "region": "Nilgiris district",
-    "summary": "Multiple Kurumba communities speak related dialects; strong ties to local forest ecology."
+    "name": "Eravallan",
+    "region": "Coimbatore and Tiruppur districts (Anamalai Hills)",
+    "summary": "One of the hill tribes of the Anamalai range, primarily engaged in agriculture and collection of forest produce."
+  },
+  {
+    "id": 4,
+    "name": "Irular",
+    "region": "Coimbatore, Erode, and Nilgiris districts",
+    "summary": "A major tribal group known for snake-catching, traditional medicine, and marginal farming; Tamil-speaking with unique dialects."
+  },
+  {
+    "id": 5,
+    "name": "Kadar",
+    "region": "Anamalai and Valparai hills of Coimbatore district",
+    "summary": "Forest dwellers and honey gatherers known for deep knowledge of the rainforest ecosystem."
   },
   {
     "id": 6,
-    "name": "Kurumans",
-    "region": "Western Ghats region",
-    "summary": "A tribal language group with important traditional knowledge systems."
+    "name": "Kammara",
+    "region": "Throughout Tamil Nadu (excluding Kanyakumari district and Shenkottah taluk of Tirunelveli)",
+    "summary": "A traditional blacksmith and metal-working community considered a tribal group in certain hilly areas."
   },
   {
-    "id": 1,
+    "id": 7,
+    "name": "Kanikaran, Kanikkar",
+    "region": "Kanyakumari district and Shenkottah, Ambasamudram taluks of Tirunelveli district",
+    "summary": "An indigenous tribe inhabiting the southern Western Ghats; primarily agriculturists and forest workers."
+  },
+  {
+    "id": 8,
+    "name": "Kaniyan, Kanyan",
+    "region": "Southern Tamil Nadu and parts of Tirunelveli",
+    "summary": "Traditionally astrologers and temple priests among Tamil tribes; maintain distinct ritual customs."
+  },
+  {
+    "id": 9,
+    "name": "Kattunayakan",
+    "region": "Nilgiris, Erode, and Coimbatore districts",
+    "summary": "A forest-dwelling community known for honey collection and elephant mahout traditions; speak a mix of Kannada and Malayalam dialects."
+  },
+  {
+    "id": 10,
+    "name": "Kochu Velan",
+    "region": "Southern Western Ghats, especially Kanyakumari and Tirunelveli",
+    "summary": "A small tribal group associated with forest gathering and traditional medicine."
+  },
+  {
+    "id": 11,
+    "name": "Konda Kapus",
+    "region": "Northern Tamil Nadu (Dharmapuri and Salem regions)",
+    "summary": "Hill agriculturalists of Telugu origin known for small-scale farming on hill slopes."
+  },
+  {
+    "id": 12,
+    "name": "Kondareddis",
+    "region": "Northwestern Tamil Nadu and bordering Andhra Pradesh",
+    "summary": "A tribal group practicing shifting cultivation and speaking a Telugu dialect; known for their forest-dependence."
+  },
+  {
+    "id": 13,
+    "name": "Koraga",
+    "region": "Western border of the Nilgiris district",
+    "summary": "A small tribal population originally from coastal Karnataka, engaged in basket weaving and manual labor."
+  },
+  {
+    "id": 14,
+    "name": "Kota",
+    "region": "Nilgiris district (excluding Kanyakumari district and Shenkottah taluk of Tirunelveli)",
+    "summary": "An artisan tribe of the Nilgiris known for pottery, music, and trade relations with Toda and Badaga communities."
+  },
+  {
+    "id": 15,
+    "name": "Kudiya, Melakudi",
+    "region": "Western slopes of the Nilgiris and Coimbatore district",
+    "summary": "A forest-dwelling tribe practicing small-scale cultivation and collecting forest produce."
+  },
+  {
+    "id": 16,
+    "name": "Kurichchan",
+    "region": "Nilgiris and adjoining Wayanad region",
+    "summary": "Closely related to the Kurichiyas of Kerala; traditional archers and agriculturalists."
+  },
+  {
+    "id": 17,
+    "name": "Kurumbas",
+    "region": "The Nilgiris district",
+    "summary": "One of the most ancient tribal groups in the Nilgiris; traditionally forest hunters and healers."
+  },
+  {
+    "id": 18,
+    "name": "Kurumans",
+    "region": "Salem, Dharmapuri, and Krishnagiri districts",
+    "summary": "A semi-nomadic tribal community primarily engaged in sheep herding and dryland agriculture."
+  },
+  {
+    "id": 19,
+    "name": "Maha Malasar",
+    "region": "Anamalai hills of Coimbatore district",
+    "summary": "Closely related to the Malasar tribe, known for deep forest habitation and honey collection."
+  },
+  {
+    "id": 20,
+    "name": "Malai Arayan",
+    "region": "Western Ghats bordering Kerala (Nilgiris and Coimbatore)",
+    "summary": "A hill tribe practicing terrace cultivation and forest-based livelihoods; culturally similar to the Arayan tribes of Kerala."
+  },
+  {
+    "id": 21,
+    "name": "Malai Pandaram",
+    "region": "Tirunelveli and Kanyakumari districts",
+    "summary": "A small nomadic tribe living in dense forests, known for collecting honey and herbal products."
+  },
+  {
+    "id": 22,
+    "name": "Malai Vedan",
+    "region": "Western Ghats of Kanyakumari district",
+    "summary": "A tribal hunting community residing in hill forests; name literally means 'hill hunter.'"
+  },
+  {
+    "id": 23,
+    "name": "Malakkuravan",
+    "region": "Southern districts of Tamil Nadu",
+    "summary": "A nomadic tribe with traditional skills in animal trapping and minor forest produce collection."
+  },
+  {
+    "id": 24,
+    "name": "Malasar",
+    "region": "Anamalai hills in Coimbatore and Tiruppur districts",
+    "summary": "Forest dwellers and honey gatherers known for spiritual traditions connected to nature."
+  },
+  {
+    "id": 25,
+    "name": "Malayali",
+    "region": "Dharmapuri, North Arcot, Pudukottai, Salem, South Arcot, and Tiruchirapalli districts",
+    "summary": "A large hill tribe engaged in dryland farming and forestry, speaking a Tamilized form of Malayalam."
+  },
+  {
+    "id": 26,
+    "name": "Malayekandi",
+    "region": "Western Ghats of the Nilgiris and Coimbatore",
+    "summary": "A small forest-dependent group associated with the Malayali and Kadar tribes."
+  },
+  {
+    "id": 27,
+    "name": "Mannan",
+    "region": "Anamalai hills and border regions of Idukki and Coimbatore",
+    "summary": "A forest-dwelling tribe practicing agriculture and known for matrilineal traditions."
+  },
+  {
+    "id": 28,
+    "name": "Mudugar, Muduvan",
+    "region": "Anamalai and Valparai hills (Coimbatore and Tiruppur districts)",
+    "summary": "Hill-dwelling tribe with a distinctive language; practice slash-and-burn cultivation and honey collection."
+  },
+  {
+    "id": 29,
+    "name": "Muthuvan",
+    "region": "Anamalai and Tirunelveli hills",
+    "summary": "A traditional forest tribe maintaining isolation; known for agriculture and animist practices."
+  },
+  {
+    "id": 30,
+    "name": "Palleyan",
+    "region": "Southern hill regions of Tirunelveli and Kanyakumari",
+    "summary": "A small tribal community with traditional forest-based livelihoods."
+  },
+  {
+    "id": 31,
+    "name": "Palliyan",
+    "region": "Madurai, Dindigul, and Tirunelveli districts",
+    "summary": "One of the oldest forest-dwelling tribes; primarily hunter-gatherers and honey collectors."
+  },
+  {
+    "id": 32,
+    "name": "Palliyar",
+    "region": "Southern Western Ghats (Madurai and Tirunelveli)",
+    "summary": "Closely related to the Palliyans; live in hill caves and depend on forest produce."
+  },
+  {
+    "id": 33,
+    "name": "Paniyan",
+    "region": "Nilgiris district",
+    "summary": "Tribal agricultural laborers of Kerala origin, known for tea plantation work and simple customs."
+  },
+  {
+    "id": 34,
+    "name": "Sholaga",
+    "region": "Coimbatore and Erode districts (near Sathyamangalam forests)",
+    "summary": "Forest tribe known for honey collection, herbal knowledge, and harmonious coexistence with nature."
+  },
+  {
+    "id": 35,
     "name": "Toda",
-    "region": "Nilgiri Hills (excl. Kanyakumari & Shenkottah taluk)",
-    "summary": "A Dravidian language of the Toda people, famed for unique phonology and oral literature."
+    "region": "Nilgiris district (excluding Kanyakumari district and Shenkottah taluk of Tirunelveli)",
+    "summary": "A pastoral tribe famous for buffalo herding, unique barrel-shaped huts, and distinctive embroidery."
+  },
+  {
+    "id": 36,
+    "name": "Uraly",
+    "region": "Tirunelveli and Kanyakumari districts",
+    "summary": "Hill tribe known for subsistence agriculture, forest gathering, and traditional governance systems."
   }
 ]
