@@ -1,0 +1,38 @@
+[
+  {
+    "id": 4,
+    "name": "Irular",
+    "region": "Tamil Nadu & Kerala",
+    "summary": "A Dravidian language spoken by the Irula people; traditional knowledge of snakes and forest medicine."
+  },
+  {
+    "id": 7,
+    "name": "Kattunayakan",
+    "region": "Western Ghats (Nilgiris, Wayanad)",
+    "summary": "A tribal language of forest-dwelling communities; rich oral traditions and songs."
+  },
+  {
+    "id": 2,
+    "name": "Kota",
+    "region": "Nilgiris (excl. Kanyakumari & Shenkottah taluk)",
+    "summary": "A South Dravidian language with musical traditions; distinct phonology and culture."
+  },
+  {
+    "id": 3,
+    "name": "Kurumbas",
+    "region": "Nilgiris district",
+    "summary": "Multiple Kurumba communities speak related dialects; strong ties to local forest ecology."
+  },
+  {
+    "id": 6,
+    "name": "Kurumans",
+    "region": "Western Ghats region",
+    "summary": "A tribal language group with important traditional knowledge systems."
+  },
+  {
+    "id": 1,
+    "name": "Toda",
+    "region": "Nilgiri Hills (excl. Kanyakumari & Shenkottah taluk)",
+    "summary": "A Dravidian language of the Toda people, famed for unique phonology and oral literature."
+  }
+]
