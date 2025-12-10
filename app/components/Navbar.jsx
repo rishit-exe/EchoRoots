@@ -4,12 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { cn } from "../utils/cn";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -17,6 +19,31 @@ export default function Navbar() {
     { name: "Resources", path: "/resources" },
     { name: "Researchers", path: "/researchers" }
   ];
+
+  useEffect(() => {
+    if (!open) return;
+
+    function handleOutside(e) {
+      const target = e.target;
+      if (menuRef.current && menuRef.current.contains(target)) return;
+      if (buttonRef.current && buttonRef.current.contains(target)) return;
+      setOpen(false);
+    }
+
+    function handleKey(e) {
+      if (e.key === "Escape") setOpen(false);
+    }
+
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
+    document.addEventListener("keydown", handleKey);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [open]);
 
   return (
     <>
@@ -63,6 +90,7 @@ export default function Navbar() {
         <button
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
+          ref={buttonRef}
           onClick={() => setOpen(prev => !prev)}
           className="bg-black/20 backdrop-blur-md p-2 rounded-md border border-white/20"
         >
@@ -72,7 +100,7 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       {open && (
-        <div className="sm:hidden fixed top-16 right-4 left-4 z-40 bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/20">
+        <div ref={menuRef} className="sm:hidden fixed top-16 right-4 left-4 z-40 bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/20">
           <div className="flex flex-col space-y-2">
             {navItems.map(item => (
               <Link
